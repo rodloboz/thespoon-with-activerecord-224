@@ -1,0 +1,25 @@
+<h1>The Spoon</h1>
+
+<table>
+  <th>Name</th>
+  <th>Address</th>
+  <th>Stars</th>
+  <th>Actions</th>
+  <tbody>
+  <% @restaurants.each do |restaurant| %>
+    <tr>
+      <td><%= restaurant.name %></td>
+      <td><%= restaurant.address %></td>
+      <td><%= restaurant.stars %></td>
+      <td>
+        <%= link_to 'Show', restaurant_path(restaurant) %> |
+        <%= link_to 'Edit', edit_restaurant_path(restaurant) %> |
+        <%= link_to 'Delete', restaurant_path(restaurant), method: :delete %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Restaurant', new_restaurant_path %>
+
